@@ -15,5 +15,6 @@ def slice():
         gui.BitBlt(hdc, x, y, sw, 64, hdc, 0, y, con.SRCCOPY)
 
         gui.ReleaseDC(0, hdc)
+        time.sleep(0.1)
 time.sleep(1)
 slice()

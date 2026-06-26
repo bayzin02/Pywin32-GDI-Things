@@ -1,18 +1,20 @@
 import win32gui as gui
-import win32con as con
 import win32api as api
 import time
 
-def invert():
+def setpixel():
     sw = api.GetSystemMetrics(0)
     sh = api.GetSystemMetrics(1)
     while True:
         hdc = gui.GetDC(0)
 
-        gui.PatBlt(hdc, 0, 0, sw, sh, con.PATINVERT)
+        for y in range(sh):
+            for x in range(sw):
+                draw = (x * 6) & 255
+
+                gui.SetPixel(hdc, x, y, api.RGB(draw, draw, draw))
 
         gui.ReleaseDC(0, hdc)
-        time.sleep(1.5)
 
 time.sleep(1)
-invert()
+setpixel()

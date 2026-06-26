@@ -31,6 +31,6 @@ def boucingcircles():
         gui.DeleteObject(brush)
         gui.ReleaseDC(0, hdc)
 
-        time.sleep(0.01)
+        time.sleep(1/60)
 time.sleep(1)
 boucingcircles()
