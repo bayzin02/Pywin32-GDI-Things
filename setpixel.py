@@ -9,10 +9,7 @@ def setpixel():
         hdc = gui.GetDC(0)
 
         for y in range(sh):
-            for x in range(sw):
-                draw = (x * 6) & 255
-
-                gui.SetPixel(hdc, x, y, api.RGB(draw, draw, draw))
+            gui.PatBlt(hdc, 0, y, 0, sh, )
 
         gui.ReleaseDC(0, hdc)
 
